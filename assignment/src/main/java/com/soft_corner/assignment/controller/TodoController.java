@@ -11,11 +11,13 @@ import java.util.List;
 public class TodoController {
     @Autowired
     private ToDoService toDoService;
-
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping
     public List<ToDo> getAllTodos(){
         return toDoService.getAllToDos();
     }
+
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping
     public ToDo createToDo(@RequestBody ToDo todo){
         return toDoService.createToDo(todo);
