@@ -22,10 +22,10 @@ public class ToDo {
     private String user_name;
 
     @Column(name="task",nullable=false)
-    private String task;
+    public String task;
 
     @CreationTimestamp
-    @Column(name="created_date",nullable=false)
+    @Column(name="created_date",nullable=false,updatable = false)
     private Timestamp created_date;
 
     @CreationTimestamp
@@ -47,6 +47,7 @@ public class ToDo {
     public  String getTask(){
         return task;
     }
+
     public Timestamp getCreated_date(){
         return created_date;
     }
@@ -60,7 +61,7 @@ public class ToDo {
         this.updated_date=updated_date;
     }
 
-    public String getUse_namer(){
+    public String getUser_name(){
         return user_name;
     }
     public void setUser_name(){

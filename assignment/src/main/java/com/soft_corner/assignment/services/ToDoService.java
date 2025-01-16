@@ -18,8 +18,18 @@ public ToDoService(ToDoRepository todoRepository) {
     public List<ToDo> getAllToDos(){
         return todoRepository.findAll();
     }
+
     public ToDo createToDo(ToDo todo){
         return todoRepository.save(todo);
     }
+
+    public ToDo saveToDo(ToDo todo){
+        return todoRepository.save(todo);
+    }
+
+    public void deleteToDo(ToDo todo){
+         todoRepository.deleteById(todo.getId());
+    }
+
 }
 

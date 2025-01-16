@@ -19,10 +19,23 @@ public class TodoController {
 
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping
-    public ToDo createToDo(@RequestBody ToDo todo){
+    public ToDo createToDo(@RequestBody ToDo todo) {
+        System.out.print("here");
+        System.out.println("Received Request Body: " + todo.toString());
         return toDoService.createToDo(todo);
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
+    @PutMapping
+    public ToDo saveToDo(@RequestBody ToDo todo) {
+        return toDoService.saveToDo(todo);
 
+    }
+
+    @CrossOrigin(origins = "http://localhost:3000")
+    @DeleteMapping
+    public void deleteToDo(@RequestBody ToDo todo){
+         toDoService.deleteToDo(todo);
+    }
 }
 
